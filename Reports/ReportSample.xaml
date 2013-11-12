@@ -5,9 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:WpfPrintReportSample.ViewModels"
              mc:Ignorable="d"
-             d:DataContext="{d:DesignInstance vm:MainWindowViewModel}"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="1122" d:DesignWidth="793">
+    <UserControl.DataContext>
+        <vm:MainWindowViewModel />
+    </UserControl.DataContext>
     <Grid>
-        <Label Content="{Binding Text}" Width="100" Height="30" />
+        <Label Content="{Binding Text}" FontSize="70"
+               VerticalContentAlignment="Center"
+               HorizontalContentAlignment="Center"/>
     </Grid>
 </UserControl>
