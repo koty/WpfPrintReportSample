@@ -28,7 +28,7 @@ namespace WpfPrintReportSample.ViewModels
 
         private void Print()
         {
-
+            Printer.Print(this);
         }
     }
 }
