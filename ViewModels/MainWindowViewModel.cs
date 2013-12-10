@@ -1,10 +1,7 @@
-﻿using Livet;
+﻿using System.ComponentModel;
+using System.Windows;
+using Livet;
 using Livet.Commands;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WpfPrintReportSample.ViewModels
 {
@@ -12,18 +9,19 @@ namespace WpfPrintReportSample.ViewModels
     {
         public MainWindowViewModel()
         {
-            Text = "あいうえお";
+            if (DesignerProperties.GetIsInDesignMode(new DependencyObject()))
+            {
+                Text = "あいうえお";
+            }
         }
 
         public string Text { get; set; }
 
         private ViewModelCommand printCommand;
+
         public ViewModelCommand PrintCommand
         {
-            get
-            {
-                return this.printCommand ?? (this.printCommand = new ViewModelCommand(this.Print));
-            }
+            get { return this.printCommand ?? (this.printCommand = new ViewModelCommand(this.Print)); }
         }
 
         private void Print()
